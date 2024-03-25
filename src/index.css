@@ -31,7 +31,7 @@ li {
   margin-top: 15px;
 }
 
-button {
+.add-button {
   height: 30px;
   width: 60px;
   background-color: #1b0fff;
@@ -39,4 +39,25 @@ button {
   font-size: 1.05rem;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.backlog-list {
+  width: 80%;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 4px;
+}
+
+.head {
+  font-weight: bold;
+  text-align: center;
 }

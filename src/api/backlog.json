@@ -1,0 +1,39 @@
+{
+  "games": [
+    {
+      "gameName": "Final Fantasy VI",
+      "console": "PS1"
+    },
+    {
+      "gameName": "Nightcaster",
+      "console": "Xbox"
+    },
+    {
+      "gameName": "Jet Set Radio",
+      "console": "DreamCast"
+    }
+  ],
+  "consoles": [
+    {
+      "con": "Megadrive"
+    },
+    {
+      "con": "Snes"
+    },
+    {
+      "con": "GameCube"
+    },
+    {
+      "con": "Xbox"
+    },
+    {
+      "con": "PS1"
+    },
+    {
+      "con": "N64"
+    },
+    {
+      "con": "DreamCast"
+    }
+  ]
+}

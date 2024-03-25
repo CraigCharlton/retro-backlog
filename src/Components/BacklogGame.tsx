@@ -8,14 +8,18 @@ interface Props {
 
 const BacklogGame = ({ game, deleteGame }: Props) => {
   return (
-    <div className='game'>
-      <div className="content">
-        <span>{game.gameName}</span>
-        <span>{game.console}</span>
+    <div className="grid-row">
+      <div className='grid-item'>
+        {game.gameName}
       </div>
-      <button onClick={() => {
-        deleteGame(game.gameName);
-      }}>X</button>
+      <div className='grid-item'>
+        {game.console}
+      </div>
+      <div className='grid-item'>
+        <button onClick={() => {
+          deleteGame(game.gameName);
+        }}>X</button>
+      </div>
     </div>
   );
 }
