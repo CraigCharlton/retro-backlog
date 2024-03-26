@@ -1,6 +1,9 @@
 import React, { useState, ChangeEvent, useEffect } from 'react'
 import BacklogGame from './BacklogGame';
 import { IGame, IConsoles } from '../Interfaces';
+import SpaceInvader from '../Assets/space-invader.png';
+
+
 
 export const GameList: React.FC = () => {
 
@@ -61,34 +64,38 @@ export const GameList: React.FC = () => {
 
   return (
     <div className="main-container">
-      <h1>Game List</h1>
-      <input type="text"
-        className="input"
-        placeholder='Game...'
-        name='game'
-        value={game}
-        onChange={handleChange} />
+      <img src={SpaceInvader} alt="Space Invader" />
+      <h1>Retro Backlog</h1>
+      <p>Add a game you want to play and the console it will be played on below!</p>
+      <div className="input-container">
+        <input type="text"
+          className="input"
+          placeholder='Game...'
+          name='game'
+          value={game}
+          onChange={handleChange} />
 
-      <input type="text"
-        className="input"
-        list="console"
-        placeholder='Console...'
-        name='console'
-        value={console}
-        onChange={handleChange} />
+        <input type="text"
+          className="input"
+          list="console"
+          placeholder='Console...'
+          name='console'
+          value={console}
+          onChange={handleChange} />
 
-      <datalist id="console">
-        <option value="Megadrive" />
-        <option value="N64" />
-        <option value="Gamecube" />
-        <option value="SNES" />
-        <option value="Dreamcast" />
-        {/* {consoles.map((con: IConsoles, key: number) => {
-          <option key={key} value={con} />
-        })} */}
-      </datalist>
+        <datalist id="console">
+          <option value="Megadrive" />
+          <option value="N64" />
+          <option value="Gamecube" />
+          <option value="SNES" />
+          <option value="Dreamcast" />
+          {/* {consoles.map((con: IConsoles, key: number) => {
+            <option key={key} value={con} />
+          })} */}
+        </datalist>
 
-      <button className="add-button" onClick={addGame}>Add</button>
+        <button className="add-button" onClick={addGame}>Add</button>
+      </div>
       <div className='backlog-list'>
         <div className="grid-row">
           <div className="grid-item head">Game</div>

@@ -8,6 +8,21 @@
   font-family: $mainFontFamily;
 }
 
+h1 {
+  color: $secondaryColor;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+img {
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+p {
+  padding: 20px;
+}
+
 .main-container {
   height: 100vh;
   display: flex;
@@ -19,12 +34,21 @@
 .input {
   height: 35px;
   width: 165px;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 5px;
   padding: 10px;
   border: 1px solid #ccc;
-  margin-left: 10px;
-  margin-top: 40px;
+  margin: 10px;
+}
+
+.input-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  @media screen and (min-width: $mediumScreen) {
+    flex-flow: row;
+  }
 }
 
 li {
@@ -34,21 +58,22 @@ li {
 .add-button {
   height: 30px;
   width: 60px;
-  background-color: #1b0fff;
-  color: #fff;
+  background-color: $lightBlue;
+  color: $white;
   font-size: 1rem;
-  margin-top: 10px;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .backlog-list {
+  max-width: 900px;
   width: 80%;
 }
 
 .grid-row {
   display: grid;
-  grid-template-columns: 45% 25% 15% 15%;
-  padding: 10px;
+  grid-template-columns: 40% 20% 20% 20%;
+  padding: 1px;
 }
 
 .grid-item {
@@ -60,6 +85,7 @@ li {
   &.head {
     font-weight: bold;
     text-align: center;
+    margin-bottom: 5px;
   }
 }
 
@@ -69,7 +95,7 @@ li {
   button {
     width: 26px;
     background-color: $red;
-    color: #fff;
+    color: $white;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 6px;
