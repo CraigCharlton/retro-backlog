@@ -2,15 +2,23 @@
   "games": [
     {
       "gameName": "Final Fantasy VI",
-      "console": "PS1"
+      "console": "PS1",
+      "completed": false
     },
     {
       "gameName": "Nightcaster",
-      "console": "Xbox"
+      "console": "Xbox",
+      "completed": false
+    },
+    {
+      "gameName": "Sonic 2",
+      "console": "Megadrive",
+      "completed": true
     },
     {
       "gameName": "Jet Set Radio",
-      "console": "DreamCast"
+      "console": "DreamCast",
+      "completed": false
     }
   ],
   "consoles": [

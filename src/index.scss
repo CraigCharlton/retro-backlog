@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "variables";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #e0eef3;
-  font-family: "Roboto", sans-serif;
+  background-color: $primaryColor;
+  font-family: $mainFontFamily;
 }
 
 .main-container {
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-input {
+.input {
   height: 35px;
   width: 165px;
   background-color: #fff;
@@ -36,7 +36,7 @@ li {
   width: 60px;
   background-color: #1b0fff;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -47,7 +47,7 @@ li {
 
 .grid-row {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 45% 25% 15% 15%;
   padding: 10px;
 }
 
@@ -55,9 +55,23 @@ li {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 4px;
+
+
+  &.head {
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
-.head {
-  font-weight: bold;
+.inputs {
   text-align: center;
+
+  button {
+    width: 26px;
+    background-color: $red;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+  }
 }

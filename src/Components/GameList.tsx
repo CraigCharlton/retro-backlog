@@ -20,7 +20,8 @@ export const GameList: React.FC = () => {
   const addGame = (): void => {
     const newGame = {
       gameName: game,
-      console: console
+      console: console,
+      completed: false
     };
     setBacklog([...backlog, newGame])
     setGame("");
@@ -33,30 +34,43 @@ export const GameList: React.FC = () => {
     }))
   }
 
+  const toggleComplete = (gameNameToComplete: string): void => {
+    setBacklog(
+      backlog.map((game) => {
+        if (game.gameName === gameNameToComplete) {
+          return { ...game, completed: !game.completed };
+        }
+        return game;
+      })
+    )
+  }
+
   useEffect(() => {
     fetch("http://localhost:5000/games")
       .then((response) => response.json())
       .then((result) => setBacklog(result))
-    // .catch((error) => console.log("error", error))
+      .catch((error) => alert(error))
   }, []);
 
   useEffect(() => {
     fetch("http://localhost:5000/consoles")
       .then((response) => response.json())
       .then((result) => setConsoles(result))
-    // .catch((error) => console.log("error", error))
+      .catch((error) => alert(error))
   }, []);
 
   return (
     <div className="main-container">
       <h1>Game List</h1>
       <input type="text"
+        className="input"
         placeholder='Game...'
         name='game'
         value={game}
         onChange={handleChange} />
 
       <input type="text"
+        className="input"
         list="console"
         placeholder='Console...'
         name='console'
@@ -79,10 +93,11 @@ export const GameList: React.FC = () => {
         <div className="grid-row">
           <div className="grid-item head">Game</div>
           <div className="grid-item head">Console</div>
+          <div className="grid-item head">Completed?</div>
           <div className="grid-item head">Remove?</div>
         </div>
         {backlog.map((game: IGame, key: number) => {
-          return <BacklogGame key={key} game={game} deleteGame={deleteGame} />
+          return <BacklogGame key={key} game={game} deleteGame={deleteGame} toggleComplete={toggleComplete} />
         })}
       </div>
     </div>
